@@ -30,8 +30,12 @@ app.post('/getResponse', async (req, res) => {
             error:err
         })
     })
-});
+})
 
-
+app.get('*',(req,res)=>{
+    res.status(404).json({
+        msg:'bad request'
+    })
+})
 
 module.exports = app
